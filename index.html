@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showrov</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <script>
+        function changeFavicon(newIconUrl) {
+            var link = document.createElement('link');
+            var oldLink = document.getElementById('favicon');
+            link.id = 'favicon';
+            link.rel = 'icon';
+            link.type = 'image/x-icon';
+            link.href = newIconUrl;
+            if (oldLink) {
+                document.head.removeChild(oldLink);
+            }
+            document.head.appendChild(link);
+        }
+        changeFavicon('/images/new-favicon.ico'); // or
+        changeFavicon('https://yourdomain.com/images/new-favicon.ico');
+    </script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
